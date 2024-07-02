@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Demo Page
+        </title>
+        <script src="demoprog5.js"></script>
+        <script>
+            function validateData(){
+                var transactionStatus=collectMyData(document.getElementById("txtename").value,
+                Number(document.getElementById("txtage").value));
+                var headingObject=document.getElementById("resultheading");
+                var headingMessage="";
+                if(transactionStatus===true){
+                    headingMessage="All Data Were Successfully Saved";
+                }else{
+                    headingMessage="Oops!!! looks like we missed on some crucial information";
+                }
+
+                headingObject.innerText=headingMessage;
+            }
+        </script>
+    </head>
+    <body>
+        <input type="button"
+         value="Call the function"
+         onclick="greetUser();">
+         <br>
+         <br>
+         <span>
+            Enter your name
+         </span>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <input type="text" id="txtname">
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <input type="button" 
+          value="Save My Name"
+          onclick="document.getElementById('subheading').innerHTML=getMyName(document.getElementById('txtname').value);">
+          <br>
+          <br>
+          <h2 id="subheading">
+          </h2>
+          <br>
+          <br>
+          <span>
+            Enter Your Name
+          </span>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="text" id="txtename">
+          <br>
+          <br>
+          <span>
+            Enter Your Age
+          </span>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="number" id="txtage">
+          <br>
+          <br>
+          <input type="button" value="Validate Data"
+           onclick="validateData();">
+           <br>
+           <br>
+           <h3 id="resultheading">
+
+           </h3>
+    </body>
+</html>
